@@ -1,31 +1,31 @@
 Qty;Parts;Value;Device;Package;Description
 1;IC1;SRAM 628128/628512;TC551001CP;DIL32;MEMORY SRAM
-1;IC2;74LS245;74LS245N;DIL20;Octal BUS TRANSCEIVER, 3-state
+1;IC2;74LS245;74LS245N;DIL20;Octal BUS TRANSCEIVER 3-state
 1;IC3;MAX232;MAX232;DIL16;RS232 TRANSCEIVER
 1;Q1;BS170;BS170;SOT54E;N-CHANNEL MOS FET
 1;D1;1N5817;1N5817-B;DO41-7.6;1.0A SCHOTTKY BARRIER RECTIFIER
-1;R1;47k;R-EU_0207/10;0207/10;RESISTOR, European symbol
-1;R15;4k7;R-EU_0207/10;0207/10;RESISTOR, European symbol
-2;R2, R3;4k7;R-EU_0207/10;0207/10;RESISTOR, European symbol
+1;R1;47k;R-EU_0207/10;0207/10;RESISTOR European symbol
+1;R15;4k7;R-EU_0207/10;0207/10;RESISTOR European symbol
+2;R2 R3;4k7;R-EU_0207/10;0207/10;RESISTOR European symbol
 1;RN1;DNI (optional data pull-up ~10k);RN08;RN-9;RESISTOR NETWORK
-1;C1;22 nF;C-EU025-024X044;C025-024X044;CAPACITOR, European symbol
-3;C10, C13, C14;100 nF;C-EU025-024X044;C025-024X044;CAPACITOR, European symbol
-1;C11;100 nF;C-EU050-025X075;C050-025X075;CAPACITOR, European symbol
-1;C2;6.8 uF;CPOL-EUE5-4;E5-4;POLARIZED CAPACITOR, European symbol
-1;C3;6.8 uF;CPOL-EUE2.5-5;E2,5-5;POLARIZED CAPACITOR, European symbol
-5;C4, C5, C6, C7, C8;1 uF;CPOL-EUE2.5-5;E2,5-5;POLARIZED CAPACITOR, European symbol
-2;C9, C18;22 uF;CPOL-EUE2.5-5;E2,5-5;POLARIZED CAPACITOR, European symbol
-2;JP1, JP2;OLED power select jumper;1x3 pin header;JP2;JUMPER
-2;JP3, JP4;INT/OLED jumper;1x3 pin header;JP2;JUMPER
+1;C1;22 nF;C-EU025-024X044;C025-024X044;CAPACITOR European symbol
+3;C10 C13 C14;100 nF;C-EU025-024X044;C025-024X044;CAPACITOR European symbol
+1;C11;100 nF;C-EU050-025X075;C050-025X075;CAPACITOR European symbol
+1;C2;6.8 uF;CPOL-EUE5-4;E5-4;POLARIZED CAPACITOR European symbol
+1;C3;6.8 uF;CPOL-EUE2.5-5;E2.5-5;POLARIZED CAPACITOR European symbol
+5;C4 C5 C6 C7 C8;1 uF;CPOL-EUE2.5-5;E2.5-5;POLARIZED CAPACITOR European symbol
+2;C9 C18;22 uF;CPOL-EUE2.5-5;E2.5-5;POLARIZED CAPACITOR European symbol
+2;JP1 JP2;OLED power select jumper;1x3 pin header;JP2;JUMPER
+2;JP3 JP4;INT/OLED jumper;1x3 pin header;JP2;JUMPER
 1;JP5;optional serial module power;1x2 pin header;1X02;PIN HEADER
 1;S1;RESET;31-XX;B3F-31XX;OMRON SWITCH
 1;SV1;SWD;1x5 female header + 1x5 pin header;MA05-1;PIN HEADER
 1;SV10;optional serial module IO;1x4 pin header;MA04-1;PIN HEADER
-2;SV11, SV12;optional logic analyser connector;1x4 pin header;MA04-1;PIN HEADER
-2;SV2, SV3;OLED;MA04-1;MA04-1;PIN HEADER
-3;SV4, SV5, SV6;optional logic analyser connector;1x8 pin header;MA08-1;PIN HEADER
+2;SV11 SV12;optional logic analyser connector;1x4 pin header;MA04-1;PIN HEADER
+2;SV2 SV3;OLED;MA04-1;MA04-1;PIN HEADER
+3;SV4 SV5 SV6;optional logic analyser connector;1x8 pin header;MA08-1;PIN HEADER
 1;SV7;optional logic analyser connector;1x10 pin header;MA10-1;PIN HEADER
-2;SV8, SV9;optional logic analyser connector;1x3 pin header;MA03-1;PIN HEADER
+2;SV8 SV9;optional logic analyser connector;1x3 pin header;MA03-1;PIN HEADER
 1;U$1;CY8CKIT-059;CY8CKIT-059;;
 2;U$1;CY8CKIT-059 I/O pins;1x28 female header + 1x28 pin header;;
 1;U$1;CY8CKIT-059 SWD pins;1x5 female header + 1x5 pin header;;
