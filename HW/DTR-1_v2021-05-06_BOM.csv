@@ -1,5 +1,3 @@
-SAPI-1 DTR-1 board partlist (BOM);;;;;
-;;;;;
 Qty;Parts;Value;Device;Package;Description
 1;IC1;SRAM 628128/628512;TC551001CP;DIL32;MEMORY SRAM
 1;IC2;74LS245;74LS245N;DIL20;Octal BUS TRANSCEIVER, 3-state
