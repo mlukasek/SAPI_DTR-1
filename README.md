@@ -15,3 +15,15 @@ Deska DTR-1 využívá levný Cypress (Infineon) kit CY8CKIT-059 pro různé fun
 [Seznam součástek](https://github.com/mlukasek/SAPI_DTR-1/blob/main/HW/DTR-1_v2021-05-06_BOM.csv)
 
 [Gerber/Excellon pro výrobu DPS](https://github.com/mlukasek/SAPI_DTR-1/blob/main/HW/Gerber/DTR-1_v2021-05-06_Gerber_cor.zip)
+
+## Odpájení některých součástek z CY8CKIT-059
+
+Pro správnou funkci DTR-1 je potřeba z desky CY8CKIT-059 odstranit (odpájet) některé součástky. Kit je částečně analogový a na některých pinech jsou součástky, převážně kondenzátory, které by nám digitální komunikaci na sběrnici kazili, proto je potřeba asi 6 kondíků a jeden odpor z desky odpájet. Já to dělám tak, že na součástku přidám cín tak, abych byl schopen hrotem páječky z boku ohřát oba konce současně a pak součástku snadno oddělám a přebytečný cín odsaji lankem.
+
+Konkrétně se jedná o následující součástky:
+- C7, C9, C12, C13 - SAR bypass capacitors
+- C41, C42 - 32 kHz crystal capacitors
+- R5 nebo C4 - CMOD
+- R18 - User LED resistor
+- SW1 - User push button (možno ponechat, ale nesmí se stisknout, jinak připojí A2 natvrdo na GND)
+
