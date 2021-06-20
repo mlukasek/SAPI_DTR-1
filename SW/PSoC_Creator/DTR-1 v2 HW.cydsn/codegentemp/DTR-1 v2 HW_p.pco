@@ -1,0 +1,200 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+set_location "Net_414_3" macrocell 3 4 1 2
+set_location "\UART:BUART:tx_state_2\" macrocell 1 3 1 1
+set_location "\UART:BUART:rx_parity_error_pre\" macrocell 1 5 1 0
+set_location "\UART:BUART:tx_state_1\" macrocell 1 3 1 2
+set_location "Net_203_1" macrocell 3 0 0 2
+set_location "Net_602_2" macrocell 3 5 1 1
+set_location "Net_330_0" macrocell 3 2 0 1
+set_location "Net_654_6" macrocell 0 3 1 1
+set_location "Net_654_7" macrocell 2 2 0 1
+set_location "Net_464" macrocell 3 1 1 0
+set_location "\UART:BUART:tx_state_0\" macrocell 2 3 1 0
+set_location "\Millis:CounterUDB:sSTSReg:stsreg\" statusicell 2 2 4 
+set_location "Net_203_0" macrocell 3 0 0 0
+set_location "\UART:BUART:rx_status_2\" macrocell 1 5 1 1
+set_location "Net_414_7" macrocell 3 2 1 3
+set_location "Net_602_6" macrocell 3 3 1 0
+set_location "Net_654_3" macrocell 0 3 1 3
+set_location "Net_643_3" macrocell 2 0 1 1
+set_location "\UART:BUART:rx_markspace_pre\" macrocell 1 2 1 1
+set_location "Net_414_5" macrocell 3 4 0 1
+set_location "\UART:BUART:sTX:sCLOCK:TxBitClkGen\" datapathcell 0 3 2 
+set_location "\UART:BUART:rx_status_5\" macrocell 1 3 0 1
+set_location "\UART:BUART:rx_last\" macrocell 2 2 1 2
+set_location "Net_654_0" macrocell 0 3 1 0
+set_location "Net_498" macrocell 3 0 1 0
+set_location "Net_643_5" macrocell 2 0 0 0
+set_location "Net_654_5" macrocell 0 3 1 2
+set_location "\UART:BUART:rx_state_3\" macrocell 1 1 1 0
+set_location "\UART:BUART:rx_state_1\" macrocell 1 2 1 3
+set_location "\UART:BUART:tx_status_0\" macrocell 2 3 1 1
+set_location "Net_414_6" macrocell 2 4 0 0
+set_location "\UART:BUART:rx_status_4\" macrocell 2 1 0 3
+set_location "Net_602_4" macrocell 3 3 1 3
+set_location "Net_643_4" macrocell 2 0 0 2
+set_location "\UART:BUART:tx_status_2\" macrocell 3 3 0 2
+set_location "\UART:BUART:tx_parity_bit\" macrocell 0 5 0 0
+set_location "\UART:BUART:tx_mark\" macrocell 1 3 1 0
+set_location "Net_643_6" macrocell 2 0 0 3
+set_location "\Millis:CounterUDB:count_stored_i\" macrocell 1 3 0 3
+set_location "Net_674" macrocell 3 0 0 3
+set_location "\Millis:CounterUDB:overflow_reg_i\" macrocell 2 3 0 2
+set_location "\UART:BUART:rx_postpoll\" macrocell 0 5 0 1
+set_location "\UART:BUART:rx_status_3\" macrocell 1 1 1 3
+set_location "\Millis:CounterUDB:sC32:counterdp:u1\" datapathcell 3 0 2 
+set_location "\UART:BUART:rx_state_stop1_reg\" macrocell 1 2 1 0
+set_location "Net_643_2" macrocell 2 1 0 0
+set_location "\UART:BUART:rx_counter_load\" macrocell 1 1 0 3
+set_location "\UART:BUART:rx_state_2\" macrocell 1 1 0 0
+set_location "\UART:BUART:counter_load_not\" macrocell 0 3 0 0
+set_location "\UART:BUART:tx_bitclk\" macrocell 0 3 0 1
+set_location "\Millis:CounterUDB:status_2\" macrocell 2 3 0 3
+set_location "Net_203_2" macrocell 3 0 0 1
+set_location "\Millis:CounterUDB:status_0\" macrocell 2 1 1 3
+set_location "Net_450" macrocell 0 1 1 3
+set_location "Net_602_5" macrocell 3 3 0 1
+set_location "\UART:BUART:rx_parity_bit\" macrocell 1 2 1 2
+set_location "tmpOE__Dta_net_7" macrocell 1 2 0 0
+set_location "__ONE__" macrocell 1 3 0 0
+set_location "\UART:BUART:rx_bitclk_enable\" macrocell 1 5 0 2
+set_location "Net_654_4" macrocell 1 2 0 3
+set_location "\UART:BUART:txn_split\" macrocell 2 5 0 0
+set_location "\UART:BUART:txn\" macrocell 2 2 1 0
+set_location "Net_602_1" macrocell 3 4 1 0
+set_location "\UART:BUART:sTX:TxShifter:u0\" datapathcell 2 2 2 
+set_location "\Millis:CounterUDB:sC32:counterdp:u0\" datapathcell 2 0 2 
+set_location "Net_428" macrocell 1 2 0 2
+set_location "Net_654_2" macrocell 0 1 1 1
+set_location "Net_513" macrocell 3 2 0 0
+set_location "Net_414_1" macrocell 3 4 0 3
+set_location "\UART:BUART:rx_load_fifo\" macrocell 1 1 0 1
+set_location "\Millis:CounterUDB:count_enable\" macrocell 2 5 1 1
+set_location "Net_654_1" macrocell 2 1 0 2
+set_location "Net_643_1" macrocell 2 0 1 2
+set_location "\UART:BUART:sRX:RxShifter:u0\" datapathcell 1 2 2 
+set_location "Net_414_4" macrocell 3 5 0 2
+set_location "Net_691" macrocell 3 1 1 3
+set_location "\Millis:CounterUDB:sC32:counterdp:u2\" datapathcell 3 1 2 
+set_location "Net_330_1" macrocell 3 2 0 2
+set_location "Net_414_2" macrocell 2 4 0 1
+set_location "Net_602_3" macrocell 3 4 1 1
+set_location "\UART:BUART:sRX:RxSts\" statusicell 1 2 4 
+set_location "\UART:BUART:sTX:TxSts\" statusicell 3 2 4 
+set_location "\Millis:CounterUDB:sC32:counterdp:u3\" datapathcell 2 1 2 
+set_location "Net_508" macrocell 0 2 0 0
+set_location "\UART:BUART:pollcount_0\" macrocell 1 5 0 1
+set_location "Net_643_7" macrocell 2 0 1 3
+set_location "\UART:BUART:sRX:RxBitCounter\" count7cell 1 1 7 
+set_location "Net_602_7" macrocell 3 4 1 3
+set_location "\UART:BUART:tx_ctrl_mark_last\" macrocell 1 5 0 3
+set_location "\UART:BUART:pollcount_1\" macrocell 1 5 0 0
+set_location "Net_602_0" macrocell 3 5 1 3
+set_location "\UART:BUART:rx_state_0\" macrocell 1 1 1 1
+set_location "Net_414_0" macrocell 3 5 0 3
+set_location "\Millis:CounterUDB:prevCompare\" macrocell 2 1 1 1
+set_location "cydff_4" macrocell 3 1 0 0
+set_location "Net_643_0" macrocell 2 1 0 1
+set_io "AddrL(4)" iocell 2 4
+set_location "\USBUART:bus_reset\" interrupt -1 -1 23
+set_location "\Sync_Millis:genblk1[0]:INST\" synccell 2 0 5 0
+set_location "\I2COLED:I2C_FF\" i2ccell -1 -1 0
+set_location "Rx(0)_SYNC" synccell 0 1 5 0
+set_io "Dta(2)" iocell 0 2
+set_io "AddrL(0)" iocell 2 0
+# Note: port 15 is the logical name for port 8
+set_io "WE(0)" iocell 15 2
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "MW(0)" iocell 1 7
+# Note: port 12 is the logical name for port 7
+set_io "Rx(0)" iocell 12 6
+set_io "AddrL(2)" iocell 2 2
+set_io "IOW(0)" iocell 1 5
+set_location "\USBUART:USB\" usbcell -1 -1 0
+set_location "\USBUART:sof_int\" interrupt -1 -1 21
+# Note: port 12 is the logical name for port 7
+set_io "CTS(0)" iocell 12 2
+set_io "BUSAK(0)" iocell 1 2
+set_location "SDA_1(0)_SYNC" synccell 0 1 5 1
+set_location "SCL_1(0)_SYNC" synccell 3 4 5 0
+set_io "Dta(3)" iocell 0 3
+set_io "AddrL(7)" iocell 2 7
+set_io "Dta(0)" iocell 0 0
+# Note: port 15 is the logical name for port 8
+set_io "MSEL(0)" iocell 15 3
+set_io "AddrH(2)" iocell 3 2
+set_io "AddrL(5)" iocell 2 5
+set_location "\RSM:Sync:ctrl_reg\" controlcell 3 5 6 
+set_location "\RSU:Sync:ctrl_reg\" controlcell 2 5 6 
+set_location "\SRAM_Ctl:Sync:ctrl_reg\" controlcell 3 3 6 
+set_location "\BusDta:Sync:ctrl_reg\" controlcell 2 4 6 
+set_location "Net_450__SYNC" synccell 0 3 5 0
+set_location "Net_498__SYNC" synccell 3 0 5 0
+set_location "Net_464__SYNC" synccell 3 1 5 0
+set_location "Net_428__SYNC" synccell 0 3 5 1
+# Note: port 15 is the logical name for port 8
+set_io "M1(0)" iocell 15 1
+# Note: port 15 is the logical name for port 8
+set_io "OER(0)" iocell 15 5
+set_io "AddrH(3)" iocell 3 3
+set_io "AddrH(7)" iocell 3 7
+set_location "RRD_Int" interrupt -1 -1 4
+set_location "RCM_Int" interrupt -1 -1 1
+set_location "RST_Int" interrupt -1 -1 5
+set_location "M1_Int" interrupt -1 -1 0
+set_location "RCU_Int" interrupt -1 -1 2
+set_location "ROD_Int" interrupt -1 -1 3
+set_location "\USBUART:arb_int\" interrupt -1 -1 22
+# Note: port 12 is the logical name for port 7
+set_io "RTS(0)" iocell 12 3
+set_io "Dta(7)" iocell 0 7
+set_io "AddrL(1)" iocell 2 1
+set_io "IOR(0)" iocell 1 4
+set_io "AddrH(5)" iocell 3 5
+# Note: port 15 is the logical name for port 8
+set_io "\USBUART:Dp(0)\" iocell 15 6
+# Note: port 12 is the logical name for port 7
+set_io "SDA_1(0)" iocell 12 1
+set_io "Dta(1)" iocell 0 1
+set_io "AddrL(6)" iocell 2 6
+set_location "\RRD:Sync:ctrl_reg\" controlcell 3 4 6 
+set_location "\ADH_Reg:sts:sts_reg\" statuscell 2 1 3 
+set_location "\ADL_Reg:sts:sts_reg\" statuscell 0 2 3 
+set_location "\DT_Reg:sts:sts_reg\" statuscell 3 5 3 
+set_location "\RCM:sts:sts_reg\" statuscell 1 3 3 
+set_location "\RCU:sts:sts_reg\" statuscell 3 3 3 
+set_location "\ROD:sts:sts_reg\" statuscell 1 5 3 
+set_location "\RST:sts:sts_reg\" statuscell 2 3 3 
+set_io "AddrH(6)" iocell 3 6
+# Note: port 12 is the logical name for port 7
+set_io "RES(0)" iocell 12 4
+# Note: port 12 is the logical name for port 7
+set_io "SCL_1(0)" iocell 12 0
+set_io "AddrH(4)" iocell 3 4
+set_location "\USBUART:Dp\" logicalport -1 -1 8
+set_io "Dta(5)" iocell 0 5
+set_location "\USBUART:ep_1\" interrupt -1 -1 6
+set_location "\USBUART:ep_2\" interrupt -1 -1 7
+set_location "\USBUART:ep_0\" interrupt -1 -1 24
+set_location "\USBUART:ep_3\" interrupt -1 -1 8
+set_io "MAP1(0)" iocell 1 3
+set_location "\USBUART:dp_int\" interrupt -1 -1 12
+set_location "\I2COLED:I2C_IRQ\" interrupt -1 -1 15
+set_io "AddrH(1)" iocell 3 1
+set_io "Dta(4)" iocell 0 4
+# Note: port 12 is the logical name for port 7
+set_io "RTL(0)" iocell 12 5
+# Note: port 15 is the logical name for port 8
+set_io "BUSRQ(0)" iocell 15 4
+# Note: port 15 is the logical name for port 8
+set_io "\USBUART:Dm(0)\" iocell 15 7
+# Note: port 15 is the logical name for port 8
+set_io "nWAIT(0)" iocell 15 0
+# Note: port 12 is the logical name for port 7
+set_io "Tx(0)" iocell 12 7
+set_io "AddrH(0)" iocell 3 0
+set_io "MR(0)" iocell 1 6
+set_io "Dta(6)" iocell 0 6
+set_location "\UART:BUART:sCR_SyncCtl:CtrlReg\" controlcell 0 5 6 
+set_io "AddrL(3)" iocell 2 3
