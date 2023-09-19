@@ -1,6 +1,6 @@
 // ======================================================================
 // DTR-1 v2 HW.v generated from TopDesign.cysch
-// 06/20/2021 at 16:53
+// 09/19/2023 at 22:31
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1583,9 +1583,9 @@ module top ;
 
 	cy_psoc3_pins_v1_10
 		#(.id("efdd4fff-4000-4e29-a27d-1043a0e11f41"),
-		  .drive_mode(3'b100),
+		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b1),
+		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),

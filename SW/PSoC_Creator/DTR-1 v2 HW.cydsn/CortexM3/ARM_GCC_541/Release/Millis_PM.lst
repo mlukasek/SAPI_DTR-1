@@ -1,0 +1,897 @@
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Millis_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Millis_SaveConfig,"ax",%progbits
+  20              		.align	1
+  21              		.global	Millis_SaveConfig
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Millis_SaveConfig, %function
+  25              	Millis_SaveConfig:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\Millis_PM.c"
+   1:Generated_Source\PSoC5/Millis_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Millis_PM.c **** * File Name: Millis_PM.c  
+   3:Generated_Source\PSoC5/Millis_PM.c **** * Version 3.0
+   4:Generated_Source\PSoC5/Millis_PM.c **** *
+   5:Generated_Source\PSoC5/Millis_PM.c **** *  Description:
+   6:Generated_Source\PSoC5/Millis_PM.c **** *    This file provides the power management source code to API for the
+   7:Generated_Source\PSoC5/Millis_PM.c **** *    Counter.  
+   8:Generated_Source\PSoC5/Millis_PM.c **** *
+   9:Generated_Source\PSoC5/Millis_PM.c **** *   Note:
+  10:Generated_Source\PSoC5/Millis_PM.c **** *     None
+  11:Generated_Source\PSoC5/Millis_PM.c **** *
+  12:Generated_Source\PSoC5/Millis_PM.c **** ********************************************************************************
+  13:Generated_Source\PSoC5/Millis_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC5/Millis_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:Generated_Source\PSoC5/Millis_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:Generated_Source\PSoC5/Millis_PM.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC5/Millis_PM.c **** *******************************************************************************/
+  18:Generated_Source\PSoC5/Millis_PM.c **** 
+  19:Generated_Source\PSoC5/Millis_PM.c **** #include "Millis.h"
+  20:Generated_Source\PSoC5/Millis_PM.c **** 
+  21:Generated_Source\PSoC5/Millis_PM.c **** static Millis_backupStruct Millis_backup;
+  22:Generated_Source\PSoC5/Millis_PM.c **** 
+  23:Generated_Source\PSoC5/Millis_PM.c **** 
+  24:Generated_Source\PSoC5/Millis_PM.c **** /*******************************************************************************
+  25:Generated_Source\PSoC5/Millis_PM.c **** * Function Name: Millis_SaveConfig
+  26:Generated_Source\PSoC5/Millis_PM.c **** ********************************************************************************
+  27:Generated_Source\PSoC5/Millis_PM.c **** * Summary:
+  28:Generated_Source\PSoC5/Millis_PM.c **** *     Save the current user configuration
+  29:Generated_Source\PSoC5/Millis_PM.c **** *
+  30:Generated_Source\PSoC5/Millis_PM.c **** * Parameters:  
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  32:Generated_Source\PSoC5/Millis_PM.c **** *
+  33:Generated_Source\PSoC5/Millis_PM.c **** * Return: 
+  34:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  35:Generated_Source\PSoC5/Millis_PM.c **** *
+  36:Generated_Source\PSoC5/Millis_PM.c **** * Global variables:
+  37:Generated_Source\PSoC5/Millis_PM.c **** *  Millis_backup:  Variables of this global structure are modified to 
+  38:Generated_Source\PSoC5/Millis_PM.c **** *  store the values of non retention configuration registers when Sleep() API is 
+  39:Generated_Source\PSoC5/Millis_PM.c **** *  called.
+  40:Generated_Source\PSoC5/Millis_PM.c **** *
+  41:Generated_Source\PSoC5/Millis_PM.c **** *******************************************************************************/
+  42:Generated_Source\PSoC5/Millis_PM.c **** void Millis_SaveConfig(void) 
+  43:Generated_Source\PSoC5/Millis_PM.c **** {
+  28              		.loc 1 43 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  44:Generated_Source\PSoC5/Millis_PM.c ****     #if (!Millis_UsingFixedFunction)
+  45:Generated_Source\PSoC5/Millis_PM.c **** 
+  46:Generated_Source\PSoC5/Millis_PM.c ****         Millis_backup.CounterUdb = Millis_ReadCounter();
+  36              		.loc 1 46 0
+  37 0002 FFF7FEFF 		bl	Millis_ReadCounter
+  38              	.LVL0:
+  39 0006 014B     		ldr	r3, .L2
+  40 0008 5860     		str	r0, [r3, #4]
+  41 000a 08BD     		pop	{r3, pc}
+  42              	.L3:
+  43              		.align	2
+  44              	.L2:
+  45 000c 00000000 		.word	.LANCHOR0
+  46              		.cfi_endproc
+  47              	.LFE0:
+  48              		.size	Millis_SaveConfig, .-Millis_SaveConfig
+  49              		.section	.text.Millis_RestoreConfig,"ax",%progbits
+  50              		.align	1
+  51              		.global	Millis_RestoreConfig
+  52              		.thumb
+  53              		.thumb_func
+  54              		.type	Millis_RestoreConfig, %function
+  55              	Millis_RestoreConfig:
+  56              	.LFB1:
+  47:Generated_Source\PSoC5/Millis_PM.c **** 
+  48:Generated_Source\PSoC5/Millis_PM.c ****         #if(!Millis_ControlRegRemoved)
+  49:Generated_Source\PSoC5/Millis_PM.c ****             Millis_backup.CounterControlRegister = Millis_ReadControlRegister();
+  50:Generated_Source\PSoC5/Millis_PM.c ****         #endif /* (!Millis_ControlRegRemoved) */
+  51:Generated_Source\PSoC5/Millis_PM.c **** 
+  52:Generated_Source\PSoC5/Millis_PM.c ****     #endif /* (!Millis_UsingFixedFunction) */
+  53:Generated_Source\PSoC5/Millis_PM.c **** }
+  54:Generated_Source\PSoC5/Millis_PM.c **** 
+  55:Generated_Source\PSoC5/Millis_PM.c **** 
+  56:Generated_Source\PSoC5/Millis_PM.c **** /*******************************************************************************
+  57:Generated_Source\PSoC5/Millis_PM.c **** * Function Name: Millis_RestoreConfig
+  58:Generated_Source\PSoC5/Millis_PM.c **** ********************************************************************************
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 3
+
+
+  59:Generated_Source\PSoC5/Millis_PM.c **** *
+  60:Generated_Source\PSoC5/Millis_PM.c **** * Summary:
+  61:Generated_Source\PSoC5/Millis_PM.c **** *  Restores the current user configuration.
+  62:Generated_Source\PSoC5/Millis_PM.c **** *
+  63:Generated_Source\PSoC5/Millis_PM.c **** * Parameters:  
+  64:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  65:Generated_Source\PSoC5/Millis_PM.c **** *
+  66:Generated_Source\PSoC5/Millis_PM.c **** * Return: 
+  67:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  68:Generated_Source\PSoC5/Millis_PM.c **** *
+  69:Generated_Source\PSoC5/Millis_PM.c **** * Global variables:
+  70:Generated_Source\PSoC5/Millis_PM.c **** *  Millis_backup:  Variables of this global structure are used to 
+  71:Generated_Source\PSoC5/Millis_PM.c **** *  restore the values of non retention registers on wakeup from sleep mode.
+  72:Generated_Source\PSoC5/Millis_PM.c **** *
+  73:Generated_Source\PSoC5/Millis_PM.c **** *******************************************************************************/
+  74:Generated_Source\PSoC5/Millis_PM.c **** void Millis_RestoreConfig(void) 
+  75:Generated_Source\PSoC5/Millis_PM.c **** {      
+  57              		.loc 1 75 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  76:Generated_Source\PSoC5/Millis_PM.c ****     #if (!Millis_UsingFixedFunction)
+  77:Generated_Source\PSoC5/Millis_PM.c **** 
+  78:Generated_Source\PSoC5/Millis_PM.c ****        Millis_WriteCounter(Millis_backup.CounterUdb);
+  62              		.loc 1 78 0
+  63 0000 014B     		ldr	r3, .L5
+  64 0002 5868     		ldr	r0, [r3, #4]
+  65 0004 FFF7FEBF 		b	Millis_WriteCounter
+  66              	.LVL1:
+  67              	.L6:
+  68              		.align	2
+  69              	.L5:
+  70 0008 00000000 		.word	.LANCHOR0
+  71              		.cfi_endproc
+  72              	.LFE1:
+  73              		.size	Millis_RestoreConfig, .-Millis_RestoreConfig
+  74              		.section	.text.Millis_Sleep,"ax",%progbits
+  75              		.align	1
+  76              		.global	Millis_Sleep
+  77              		.thumb
+  78              		.thumb_func
+  79              		.type	Millis_Sleep, %function
+  80              	Millis_Sleep:
+  81              	.LFB2:
+  79:Generated_Source\PSoC5/Millis_PM.c **** 
+  80:Generated_Source\PSoC5/Millis_PM.c ****         #if(!Millis_ControlRegRemoved)
+  81:Generated_Source\PSoC5/Millis_PM.c ****             Millis_WriteControlRegister(Millis_backup.CounterControlRegister);
+  82:Generated_Source\PSoC5/Millis_PM.c ****         #endif /* (!Millis_ControlRegRemoved) */
+  83:Generated_Source\PSoC5/Millis_PM.c **** 
+  84:Generated_Source\PSoC5/Millis_PM.c ****     #endif /* (!Millis_UsingFixedFunction) */
+  85:Generated_Source\PSoC5/Millis_PM.c **** }
+  86:Generated_Source\PSoC5/Millis_PM.c **** 
+  87:Generated_Source\PSoC5/Millis_PM.c **** 
+  88:Generated_Source\PSoC5/Millis_PM.c **** /*******************************************************************************
+  89:Generated_Source\PSoC5/Millis_PM.c **** * Function Name: Millis_Sleep
+  90:Generated_Source\PSoC5/Millis_PM.c **** ********************************************************************************
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 4
+
+
+  91:Generated_Source\PSoC5/Millis_PM.c **** * Summary:
+  92:Generated_Source\PSoC5/Millis_PM.c **** *     Stop and Save the user configuration
+  93:Generated_Source\PSoC5/Millis_PM.c **** *
+  94:Generated_Source\PSoC5/Millis_PM.c **** * Parameters:  
+  95:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  96:Generated_Source\PSoC5/Millis_PM.c **** *
+  97:Generated_Source\PSoC5/Millis_PM.c **** * Return: 
+  98:Generated_Source\PSoC5/Millis_PM.c **** *  void
+  99:Generated_Source\PSoC5/Millis_PM.c **** *
+ 100:Generated_Source\PSoC5/Millis_PM.c **** * Global variables:
+ 101:Generated_Source\PSoC5/Millis_PM.c **** *  Millis_backup.enableState:  Is modified depending on the enable 
+ 102:Generated_Source\PSoC5/Millis_PM.c **** *  state of the block before entering sleep mode.
+ 103:Generated_Source\PSoC5/Millis_PM.c **** *
+ 104:Generated_Source\PSoC5/Millis_PM.c **** *******************************************************************************/
+ 105:Generated_Source\PSoC5/Millis_PM.c **** void Millis_Sleep(void) 
+ 106:Generated_Source\PSoC5/Millis_PM.c **** {
+  82              		.loc 1 106 0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86 0000 08B5     		push	{r3, lr}
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 3, -8
+  89              		.cfi_offset 14, -4
+ 107:Generated_Source\PSoC5/Millis_PM.c ****     #if(!Millis_ControlRegRemoved)
+ 108:Generated_Source\PSoC5/Millis_PM.c ****         /* Save Counter's enable state */
+ 109:Generated_Source\PSoC5/Millis_PM.c ****         if(Millis_CTRL_ENABLE == (Millis_CONTROL & Millis_CTRL_ENABLE))
+ 110:Generated_Source\PSoC5/Millis_PM.c ****         {
+ 111:Generated_Source\PSoC5/Millis_PM.c ****             /* Counter is enabled */
+ 112:Generated_Source\PSoC5/Millis_PM.c ****             Millis_backup.CounterEnableState = 1u;
+ 113:Generated_Source\PSoC5/Millis_PM.c ****         }
+ 114:Generated_Source\PSoC5/Millis_PM.c ****         else
+ 115:Generated_Source\PSoC5/Millis_PM.c ****         {
+ 116:Generated_Source\PSoC5/Millis_PM.c ****             /* Counter is disabled */
+ 117:Generated_Source\PSoC5/Millis_PM.c ****             Millis_backup.CounterEnableState = 0u;
+ 118:Generated_Source\PSoC5/Millis_PM.c ****         }
+ 119:Generated_Source\PSoC5/Millis_PM.c ****     #else
+ 120:Generated_Source\PSoC5/Millis_PM.c ****         Millis_backup.CounterEnableState = 1u;
+ 121:Generated_Source\PSoC5/Millis_PM.c ****         if(Millis_backup.CounterEnableState != 0u)
+ 122:Generated_Source\PSoC5/Millis_PM.c ****         {
+ 123:Generated_Source\PSoC5/Millis_PM.c ****             Millis_backup.CounterEnableState = 0u;
+  90              		.loc 1 123 0
+  91 0002 044B     		ldr	r3, .L8
+  92 0004 0022     		movs	r2, #0
+  93 0006 1A70     		strb	r2, [r3]
+ 124:Generated_Source\PSoC5/Millis_PM.c ****         }
+ 125:Generated_Source\PSoC5/Millis_PM.c ****     #endif /* (!Millis_ControlRegRemoved) */
+ 126:Generated_Source\PSoC5/Millis_PM.c ****     
+ 127:Generated_Source\PSoC5/Millis_PM.c ****     Millis_Stop();
+  94              		.loc 1 127 0
+  95 0008 FFF7FEFF 		bl	Millis_Stop
+  96              	.LVL2:
+ 128:Generated_Source\PSoC5/Millis_PM.c ****     Millis_SaveConfig();
+ 129:Generated_Source\PSoC5/Millis_PM.c **** }
+  97              		.loc 1 129 0
+  98 000c BDE80840 		pop	{r3, lr}
+  99              		.cfi_restore 14
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 5
+
+
+ 100              		.cfi_restore 3
+ 101              		.cfi_def_cfa_offset 0
+ 128:Generated_Source\PSoC5/Millis_PM.c ****     Millis_SaveConfig();
+ 102              		.loc 1 128 0
+ 103 0010 FFF7FEBF 		b	Millis_SaveConfig
+ 104              	.LVL3:
+ 105              	.L9:
+ 106              		.align	2
+ 107              	.L8:
+ 108 0014 00000000 		.word	.LANCHOR0
+ 109              		.cfi_endproc
+ 110              	.LFE2:
+ 111              		.size	Millis_Sleep, .-Millis_Sleep
+ 112              		.section	.text.Millis_Wakeup,"ax",%progbits
+ 113              		.align	1
+ 114              		.global	Millis_Wakeup
+ 115              		.thumb
+ 116              		.thumb_func
+ 117              		.type	Millis_Wakeup, %function
+ 118              	Millis_Wakeup:
+ 119              	.LFB3:
+ 130:Generated_Source\PSoC5/Millis_PM.c **** 
+ 131:Generated_Source\PSoC5/Millis_PM.c **** 
+ 132:Generated_Source\PSoC5/Millis_PM.c **** /*******************************************************************************
+ 133:Generated_Source\PSoC5/Millis_PM.c **** * Function Name: Millis_Wakeup
+ 134:Generated_Source\PSoC5/Millis_PM.c **** ********************************************************************************
+ 135:Generated_Source\PSoC5/Millis_PM.c **** *
+ 136:Generated_Source\PSoC5/Millis_PM.c **** * Summary:
+ 137:Generated_Source\PSoC5/Millis_PM.c **** *  Restores and enables the user configuration
+ 138:Generated_Source\PSoC5/Millis_PM.c **** *  
+ 139:Generated_Source\PSoC5/Millis_PM.c **** * Parameters:  
+ 140:Generated_Source\PSoC5/Millis_PM.c **** *  void
+ 141:Generated_Source\PSoC5/Millis_PM.c **** *
+ 142:Generated_Source\PSoC5/Millis_PM.c **** * Return: 
+ 143:Generated_Source\PSoC5/Millis_PM.c **** *  void
+ 144:Generated_Source\PSoC5/Millis_PM.c **** *
+ 145:Generated_Source\PSoC5/Millis_PM.c **** * Global variables:
+ 146:Generated_Source\PSoC5/Millis_PM.c **** *  Millis_backup.enableState:  Is used to restore the enable state of 
+ 147:Generated_Source\PSoC5/Millis_PM.c **** *  block on wakeup from sleep mode.
+ 148:Generated_Source\PSoC5/Millis_PM.c **** *
+ 149:Generated_Source\PSoC5/Millis_PM.c **** *******************************************************************************/
+ 150:Generated_Source\PSoC5/Millis_PM.c **** void Millis_Wakeup(void) 
+ 151:Generated_Source\PSoC5/Millis_PM.c **** {
+ 120              		.loc 1 151 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
+ 152:Generated_Source\PSoC5/Millis_PM.c ****     Millis_RestoreConfig();
+ 125              		.loc 1 152 0
+ 126 0000 FFF7FEBF 		b	Millis_RestoreConfig
+ 127              	.LVL4:
+ 128              		.cfi_endproc
+ 129              	.LFE3:
+ 130              		.size	Millis_Wakeup, .-Millis_Wakeup
+ 131              		.bss
+ 132              		.align	2
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 6
+
+
+ 133              		.set	.LANCHOR0,. + 0
+ 134              		.type	Millis_backup, %object
+ 135              		.size	Millis_backup, 8
+ 136              	Millis_backup:
+ 137 0000 00000000 		.space	8
+ 137      00000000 
+ 138              		.text
+ 139              	.Letext0:
+ 140              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 141              		.file 3 "Generated_Source\\PSoC5\\Millis.h"
+ 142              		.section	.debug_info,"",%progbits
+ 143              	.Ldebug_info0:
+ 144 0000 86010000 		.4byte	0x186
+ 145 0004 0400     		.2byte	0x4
+ 146 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 147 000a 04       		.byte	0x4
+ 148 000b 01       		.uleb128 0x1
+ 149 000c 90000000 		.4byte	.LASF26
+ 150 0010 0C       		.byte	0xc
+ 151 0011 EF010000 		.4byte	.LASF27
+ 152 0015 12000000 		.4byte	.LASF28
+ 153 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 154 001d 00000000 		.4byte	0
+ 155 0021 00000000 		.4byte	.Ldebug_line0
+ 156 0025 02       		.uleb128 0x2
+ 157 0026 01       		.byte	0x1
+ 158 0027 06       		.byte	0x6
+ 159 0028 49020000 		.4byte	.LASF0
+ 160 002c 02       		.uleb128 0x2
+ 161 002d 01       		.byte	0x1
+ 162 002e 08       		.byte	0x8
+ 163 002f 82000000 		.4byte	.LASF1
+ 164 0033 02       		.uleb128 0x2
+ 165 0034 02       		.byte	0x2
+ 166 0035 05       		.byte	0x5
+ 167 0036 E5010000 		.4byte	.LASF2
+ 168 003a 02       		.uleb128 0x2
+ 169 003b 02       		.byte	0x2
+ 170 003c 07       		.byte	0x7
+ 171 003d 49000000 		.4byte	.LASF3
+ 172 0041 02       		.uleb128 0x2
+ 173 0042 04       		.byte	0x4
+ 174 0043 05       		.byte	0x5
+ 175 0044 20020000 		.4byte	.LASF4
+ 176 0048 02       		.uleb128 0x2
+ 177 0049 04       		.byte	0x4
+ 178 004a 07       		.byte	0x7
+ 179 004b 5F010000 		.4byte	.LASF5
+ 180 004f 02       		.uleb128 0x2
+ 181 0050 08       		.byte	0x8
+ 182 0051 05       		.byte	0x5
+ 183 0052 D2010000 		.4byte	.LASF6
+ 184 0056 02       		.uleb128 0x2
+ 185 0057 08       		.byte	0x8
+ 186 0058 07       		.byte	0x7
+ 187 0059 91010000 		.4byte	.LASF7
+ 188 005d 03       		.uleb128 0x3
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 7
+
+
+ 189 005e 04       		.byte	0x4
+ 190 005f 05       		.byte	0x5
+ 191 0060 696E7400 		.ascii	"int\000"
+ 192 0064 02       		.uleb128 0x2
+ 193 0065 04       		.byte	0x4
+ 194 0066 07       		.byte	0x7
+ 195 0067 71010000 		.4byte	.LASF8
+ 196 006b 04       		.uleb128 0x4
+ 197 006c 1E010000 		.4byte	.LASF9
+ 198 0070 02       		.byte	0x2
+ 199 0071 E901     		.2byte	0x1e9
+ 200 0073 2C000000 		.4byte	0x2c
+ 201 0077 04       		.uleb128 0x4
+ 202 0078 58010000 		.4byte	.LASF10
+ 203 007c 02       		.byte	0x2
+ 204 007d EB01     		.2byte	0x1eb
+ 205 007f 48000000 		.4byte	0x48
+ 206 0083 02       		.uleb128 0x2
+ 207 0084 04       		.byte	0x4
+ 208 0085 04       		.byte	0x4
+ 209 0086 7C000000 		.4byte	.LASF11
+ 210 008a 02       		.uleb128 0x2
+ 211 008b 08       		.byte	0x8
+ 212 008c 04       		.byte	0x4
+ 213 008d 30010000 		.4byte	.LASF12
+ 214 0091 02       		.uleb128 0x2
+ 215 0092 01       		.byte	0x1
+ 216 0093 08       		.byte	0x8
+ 217 0094 E0010000 		.4byte	.LASF13
+ 218 0098 02       		.uleb128 0x2
+ 219 0099 08       		.byte	0x8
+ 220 009a 04       		.byte	0x4
+ 221 009b 29020000 		.4byte	.LASF14
+ 222 009f 02       		.uleb128 0x2
+ 223 00a0 04       		.byte	0x4
+ 224 00a1 07       		.byte	0x7
+ 225 00a2 B6010000 		.4byte	.LASF15
+ 226 00a6 05       		.uleb128 0x5
+ 227 00a7 08       		.byte	0x8
+ 228 00a8 03       		.byte	0x3
+ 229 00a9 40       		.byte	0x40
+ 230 00aa C7000000 		.4byte	0xc7
+ 231 00ae 06       		.uleb128 0x6
+ 232 00af BF010000 		.4byte	.LASF16
+ 233 00b3 03       		.byte	0x3
+ 234 00b4 42       		.byte	0x42
+ 235 00b5 6B000000 		.4byte	0x6b
+ 236 00b9 00       		.byte	0
+ 237 00ba 06       		.uleb128 0x6
+ 238 00bb 5C000000 		.4byte	.LASF17
+ 239 00bf 03       		.byte	0x3
+ 240 00c0 43       		.byte	0x43
+ 241 00c1 77000000 		.4byte	0x77
+ 242 00c5 04       		.byte	0x4
+ 243 00c6 00       		.byte	0
+ 244 00c7 07       		.uleb128 0x7
+ 245 00c8 35020000 		.4byte	.LASF18
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 8
+
+
+ 246 00cc 03       		.byte	0x3
+ 247 00cd 49       		.byte	0x49
+ 248 00ce A6000000 		.4byte	0xa6
+ 249 00d2 08       		.uleb128 0x8
+ 250 00d3 00000000 		.4byte	.LASF19
+ 251 00d7 01       		.byte	0x1
+ 252 00d8 2A       		.byte	0x2a
+ 253 00d9 00000000 		.4byte	.LFB0
+ 254 00dd 10000000 		.4byte	.LFE0-.LFB0
+ 255 00e1 01       		.uleb128 0x1
+ 256 00e2 9C       		.byte	0x9c
+ 257 00e3 F1000000 		.4byte	0xf1
+ 258 00e7 09       		.uleb128 0x9
+ 259 00e8 06000000 		.4byte	.LVL0
+ 260 00ec 68010000 		.4byte	0x168
+ 261 00f0 00       		.byte	0
+ 262 00f1 08       		.uleb128 0x8
+ 263 00f2 67000000 		.4byte	.LASF20
+ 264 00f6 01       		.byte	0x1
+ 265 00f7 4A       		.byte	0x4a
+ 266 00f8 00000000 		.4byte	.LFB1
+ 267 00fc 0C000000 		.4byte	.LFE1-.LFB1
+ 268 0100 01       		.uleb128 0x1
+ 269 0101 9C       		.byte	0x9c
+ 270 0102 10010000 		.4byte	0x110
+ 271 0106 0A       		.uleb128 0xa
+ 272 0107 08000000 		.4byte	.LVL1
+ 273 010b 73010000 		.4byte	0x173
+ 274 010f 00       		.byte	0
+ 275 0110 08       		.uleb128 0x8
+ 276 0111 4B010000 		.4byte	.LASF21
+ 277 0115 01       		.byte	0x1
+ 278 0116 69       		.byte	0x69
+ 279 0117 00000000 		.4byte	.LFB2
+ 280 011b 18000000 		.4byte	.LFE2-.LFB2
+ 281 011f 01       		.uleb128 0x1
+ 282 0120 9C       		.byte	0x9c
+ 283 0121 38010000 		.4byte	0x138
+ 284 0125 09       		.uleb128 0x9
+ 285 0126 0C000000 		.4byte	.LVL2
+ 286 012a 7E010000 		.4byte	0x17e
+ 287 012e 0A       		.uleb128 0xa
+ 288 012f 14000000 		.4byte	.LVL3
+ 289 0133 D2000000 		.4byte	0xd2
+ 290 0137 00       		.byte	0
+ 291 0138 08       		.uleb128 0x8
+ 292 0139 12020000 		.4byte	.LASF22
+ 293 013d 01       		.byte	0x1
+ 294 013e 96       		.byte	0x96
+ 295 013f 00000000 		.4byte	.LFB3
+ 296 0143 04000000 		.4byte	.LFE3-.LFB3
+ 297 0147 01       		.uleb128 0x1
+ 298 0148 9C       		.byte	0x9c
+ 299 0149 57010000 		.4byte	0x157
+ 300 014d 0A       		.uleb128 0xa
+ 301 014e 04000000 		.4byte	.LVL4
+ 302 0152 F1000000 		.4byte	0xf1
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 9
+
+
+ 303 0156 00       		.byte	0
+ 304 0157 0B       		.uleb128 0xb
+ 305 0158 A8010000 		.4byte	.LASF29
+ 306 015c 01       		.byte	0x1
+ 307 015d 15       		.byte	0x15
+ 308 015e C7000000 		.4byte	0xc7
+ 309 0162 05       		.uleb128 0x5
+ 310 0163 03       		.byte	0x3
+ 311 0164 00000000 		.4byte	Millis_backup
+ 312 0168 0C       		.uleb128 0xc
+ 313 0169 7E010000 		.4byte	.LASF23
+ 314 016d 7E010000 		.4byte	.LASF23
+ 315 0171 03       		.byte	0x3
+ 316 0172 5D       		.byte	0x5d
+ 317 0173 0C       		.uleb128 0xc
+ 318 0174 37010000 		.4byte	.LASF24
+ 319 0178 37010000 		.4byte	.LASF24
+ 320 017c 03       		.byte	0x3
+ 321 017d 5A       		.byte	0x5a
+ 322 017e 0C       		.uleb128 0xc
+ 323 017f 24010000 		.4byte	.LASF25
+ 324 0183 24010000 		.4byte	.LASF25
+ 325 0187 03       		.byte	0x3
+ 326 0188 50       		.byte	0x50
+ 327 0189 00       		.byte	0
+ 328              		.section	.debug_abbrev,"",%progbits
+ 329              	.Ldebug_abbrev0:
+ 330 0000 01       		.uleb128 0x1
+ 331 0001 11       		.uleb128 0x11
+ 332 0002 01       		.byte	0x1
+ 333 0003 25       		.uleb128 0x25
+ 334 0004 0E       		.uleb128 0xe
+ 335 0005 13       		.uleb128 0x13
+ 336 0006 0B       		.uleb128 0xb
+ 337 0007 03       		.uleb128 0x3
+ 338 0008 0E       		.uleb128 0xe
+ 339 0009 1B       		.uleb128 0x1b
+ 340 000a 0E       		.uleb128 0xe
+ 341 000b 55       		.uleb128 0x55
+ 342 000c 17       		.uleb128 0x17
+ 343 000d 11       		.uleb128 0x11
+ 344 000e 01       		.uleb128 0x1
+ 345 000f 10       		.uleb128 0x10
+ 346 0010 17       		.uleb128 0x17
+ 347 0011 00       		.byte	0
+ 348 0012 00       		.byte	0
+ 349 0013 02       		.uleb128 0x2
+ 350 0014 24       		.uleb128 0x24
+ 351 0015 00       		.byte	0
+ 352 0016 0B       		.uleb128 0xb
+ 353 0017 0B       		.uleb128 0xb
+ 354 0018 3E       		.uleb128 0x3e
+ 355 0019 0B       		.uleb128 0xb
+ 356 001a 03       		.uleb128 0x3
+ 357 001b 0E       		.uleb128 0xe
+ 358 001c 00       		.byte	0
+ 359 001d 00       		.byte	0
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 10
+
+
+ 360 001e 03       		.uleb128 0x3
+ 361 001f 24       		.uleb128 0x24
+ 362 0020 00       		.byte	0
+ 363 0021 0B       		.uleb128 0xb
+ 364 0022 0B       		.uleb128 0xb
+ 365 0023 3E       		.uleb128 0x3e
+ 366 0024 0B       		.uleb128 0xb
+ 367 0025 03       		.uleb128 0x3
+ 368 0026 08       		.uleb128 0x8
+ 369 0027 00       		.byte	0
+ 370 0028 00       		.byte	0
+ 371 0029 04       		.uleb128 0x4
+ 372 002a 16       		.uleb128 0x16
+ 373 002b 00       		.byte	0
+ 374 002c 03       		.uleb128 0x3
+ 375 002d 0E       		.uleb128 0xe
+ 376 002e 3A       		.uleb128 0x3a
+ 377 002f 0B       		.uleb128 0xb
+ 378 0030 3B       		.uleb128 0x3b
+ 379 0031 05       		.uleb128 0x5
+ 380 0032 49       		.uleb128 0x49
+ 381 0033 13       		.uleb128 0x13
+ 382 0034 00       		.byte	0
+ 383 0035 00       		.byte	0
+ 384 0036 05       		.uleb128 0x5
+ 385 0037 13       		.uleb128 0x13
+ 386 0038 01       		.byte	0x1
+ 387 0039 0B       		.uleb128 0xb
+ 388 003a 0B       		.uleb128 0xb
+ 389 003b 3A       		.uleb128 0x3a
+ 390 003c 0B       		.uleb128 0xb
+ 391 003d 3B       		.uleb128 0x3b
+ 392 003e 0B       		.uleb128 0xb
+ 393 003f 01       		.uleb128 0x1
+ 394 0040 13       		.uleb128 0x13
+ 395 0041 00       		.byte	0
+ 396 0042 00       		.byte	0
+ 397 0043 06       		.uleb128 0x6
+ 398 0044 0D       		.uleb128 0xd
+ 399 0045 00       		.byte	0
+ 400 0046 03       		.uleb128 0x3
+ 401 0047 0E       		.uleb128 0xe
+ 402 0048 3A       		.uleb128 0x3a
+ 403 0049 0B       		.uleb128 0xb
+ 404 004a 3B       		.uleb128 0x3b
+ 405 004b 0B       		.uleb128 0xb
+ 406 004c 49       		.uleb128 0x49
+ 407 004d 13       		.uleb128 0x13
+ 408 004e 38       		.uleb128 0x38
+ 409 004f 0B       		.uleb128 0xb
+ 410 0050 00       		.byte	0
+ 411 0051 00       		.byte	0
+ 412 0052 07       		.uleb128 0x7
+ 413 0053 16       		.uleb128 0x16
+ 414 0054 00       		.byte	0
+ 415 0055 03       		.uleb128 0x3
+ 416 0056 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 11
+
+
+ 417 0057 3A       		.uleb128 0x3a
+ 418 0058 0B       		.uleb128 0xb
+ 419 0059 3B       		.uleb128 0x3b
+ 420 005a 0B       		.uleb128 0xb
+ 421 005b 49       		.uleb128 0x49
+ 422 005c 13       		.uleb128 0x13
+ 423 005d 00       		.byte	0
+ 424 005e 00       		.byte	0
+ 425 005f 08       		.uleb128 0x8
+ 426 0060 2E       		.uleb128 0x2e
+ 427 0061 01       		.byte	0x1
+ 428 0062 3F       		.uleb128 0x3f
+ 429 0063 19       		.uleb128 0x19
+ 430 0064 03       		.uleb128 0x3
+ 431 0065 0E       		.uleb128 0xe
+ 432 0066 3A       		.uleb128 0x3a
+ 433 0067 0B       		.uleb128 0xb
+ 434 0068 3B       		.uleb128 0x3b
+ 435 0069 0B       		.uleb128 0xb
+ 436 006a 27       		.uleb128 0x27
+ 437 006b 19       		.uleb128 0x19
+ 438 006c 11       		.uleb128 0x11
+ 439 006d 01       		.uleb128 0x1
+ 440 006e 12       		.uleb128 0x12
+ 441 006f 06       		.uleb128 0x6
+ 442 0070 40       		.uleb128 0x40
+ 443 0071 18       		.uleb128 0x18
+ 444 0072 9742     		.uleb128 0x2117
+ 445 0074 19       		.uleb128 0x19
+ 446 0075 01       		.uleb128 0x1
+ 447 0076 13       		.uleb128 0x13
+ 448 0077 00       		.byte	0
+ 449 0078 00       		.byte	0
+ 450 0079 09       		.uleb128 0x9
+ 451 007a 898201   		.uleb128 0x4109
+ 452 007d 00       		.byte	0
+ 453 007e 11       		.uleb128 0x11
+ 454 007f 01       		.uleb128 0x1
+ 455 0080 31       		.uleb128 0x31
+ 456 0081 13       		.uleb128 0x13
+ 457 0082 00       		.byte	0
+ 458 0083 00       		.byte	0
+ 459 0084 0A       		.uleb128 0xa
+ 460 0085 898201   		.uleb128 0x4109
+ 461 0088 00       		.byte	0
+ 462 0089 11       		.uleb128 0x11
+ 463 008a 01       		.uleb128 0x1
+ 464 008b 9542     		.uleb128 0x2115
+ 465 008d 19       		.uleb128 0x19
+ 466 008e 31       		.uleb128 0x31
+ 467 008f 13       		.uleb128 0x13
+ 468 0090 00       		.byte	0
+ 469 0091 00       		.byte	0
+ 470 0092 0B       		.uleb128 0xb
+ 471 0093 34       		.uleb128 0x34
+ 472 0094 00       		.byte	0
+ 473 0095 03       		.uleb128 0x3
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 12
+
+
+ 474 0096 0E       		.uleb128 0xe
+ 475 0097 3A       		.uleb128 0x3a
+ 476 0098 0B       		.uleb128 0xb
+ 477 0099 3B       		.uleb128 0x3b
+ 478 009a 0B       		.uleb128 0xb
+ 479 009b 49       		.uleb128 0x49
+ 480 009c 13       		.uleb128 0x13
+ 481 009d 02       		.uleb128 0x2
+ 482 009e 18       		.uleb128 0x18
+ 483 009f 00       		.byte	0
+ 484 00a0 00       		.byte	0
+ 485 00a1 0C       		.uleb128 0xc
+ 486 00a2 2E       		.uleb128 0x2e
+ 487 00a3 00       		.byte	0
+ 488 00a4 3F       		.uleb128 0x3f
+ 489 00a5 19       		.uleb128 0x19
+ 490 00a6 3C       		.uleb128 0x3c
+ 491 00a7 19       		.uleb128 0x19
+ 492 00a8 6E       		.uleb128 0x6e
+ 493 00a9 0E       		.uleb128 0xe
+ 494 00aa 03       		.uleb128 0x3
+ 495 00ab 0E       		.uleb128 0xe
+ 496 00ac 3A       		.uleb128 0x3a
+ 497 00ad 0B       		.uleb128 0xb
+ 498 00ae 3B       		.uleb128 0x3b
+ 499 00af 0B       		.uleb128 0xb
+ 500 00b0 00       		.byte	0
+ 501 00b1 00       		.byte	0
+ 502 00b2 00       		.byte	0
+ 503              		.section	.debug_aranges,"",%progbits
+ 504 0000 34000000 		.4byte	0x34
+ 505 0004 0200     		.2byte	0x2
+ 506 0006 00000000 		.4byte	.Ldebug_info0
+ 507 000a 04       		.byte	0x4
+ 508 000b 00       		.byte	0
+ 509 000c 0000     		.2byte	0
+ 510 000e 0000     		.2byte	0
+ 511 0010 00000000 		.4byte	.LFB0
+ 512 0014 10000000 		.4byte	.LFE0-.LFB0
+ 513 0018 00000000 		.4byte	.LFB1
+ 514 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 515 0020 00000000 		.4byte	.LFB2
+ 516 0024 18000000 		.4byte	.LFE2-.LFB2
+ 517 0028 00000000 		.4byte	.LFB3
+ 518 002c 04000000 		.4byte	.LFE3-.LFB3
+ 519 0030 00000000 		.4byte	0
+ 520 0034 00000000 		.4byte	0
+ 521              		.section	.debug_ranges,"",%progbits
+ 522              	.Ldebug_ranges0:
+ 523 0000 00000000 		.4byte	.LFB0
+ 524 0004 10000000 		.4byte	.LFE0
+ 525 0008 00000000 		.4byte	.LFB1
+ 526 000c 0C000000 		.4byte	.LFE1
+ 527 0010 00000000 		.4byte	.LFB2
+ 528 0014 18000000 		.4byte	.LFE2
+ 529 0018 00000000 		.4byte	.LFB3
+ 530 001c 04000000 		.4byte	.LFE3
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 13
+
+
+ 531 0020 00000000 		.4byte	0
+ 532 0024 00000000 		.4byte	0
+ 533              		.section	.debug_line,"",%progbits
+ 534              	.Ldebug_line0:
+ 535 0000 A0000000 		.section	.debug_str,"MS",%progbits,1
+ 535      02005200 
+ 535      00000201 
+ 535      FB0E0D00 
+ 535      01010101 
+ 536              	.LASF19:
+ 537 0000 4D696C6C 		.ascii	"Millis_SaveConfig\000"
+ 537      69735F53 
+ 537      61766543 
+ 537      6F6E6669 
+ 537      6700
+ 538              	.LASF28:
+ 539 0012 433A5C55 		.ascii	"C:\\Users\\Kiwi\\Documents\\PSoC Creator\\DTR-1 v2 "
+ 539      73657273 
+ 539      5C4B6977 
+ 539      695C446F 
+ 539      63756D65 
+ 540 0040 48572E63 		.ascii	"HW.cydsn\000"
+ 540      7964736E 
+ 540      00
+ 541              	.LASF3:
+ 542 0049 73686F72 		.ascii	"short unsigned int\000"
+ 542      7420756E 
+ 542      7369676E 
+ 542      65642069 
+ 542      6E7400
+ 543              	.LASF17:
+ 544 005c 436F756E 		.ascii	"CounterUdb\000"
+ 544      74657255 
+ 544      646200
+ 545              	.LASF20:
+ 546 0067 4D696C6C 		.ascii	"Millis_RestoreConfig\000"
+ 546      69735F52 
+ 546      6573746F 
+ 546      7265436F 
+ 546      6E666967 
+ 547              	.LASF11:
+ 548 007c 666C6F61 		.ascii	"float\000"
+ 548      7400
+ 549              	.LASF1:
+ 550 0082 756E7369 		.ascii	"unsigned char\000"
+ 550      676E6564 
+ 550      20636861 
+ 550      7200
+ 551              	.LASF26:
+ 552 0090 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 552      43313120 
+ 552      352E342E 
+ 552      31203230 
+ 552      31363036 
+ 553 00c3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 553      20726576 
+ 553      6973696F 
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 14
+
+
+ 553      6E203233 
+ 553      37373135 
+ 554 00f6 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 554      66756E63 
+ 554      74696F6E 
+ 554      2D736563 
+ 554      74696F6E 
+ 555              	.LASF9:
+ 556 011e 75696E74 		.ascii	"uint8\000"
+ 556      3800
+ 557              	.LASF25:
+ 558 0124 4D696C6C 		.ascii	"Millis_Stop\000"
+ 558      69735F53 
+ 558      746F7000 
+ 559              	.LASF12:
+ 560 0130 646F7562 		.ascii	"double\000"
+ 560      6C6500
+ 561              	.LASF24:
+ 562 0137 4D696C6C 		.ascii	"Millis_WriteCounter\000"
+ 562      69735F57 
+ 562      72697465 
+ 562      436F756E 
+ 562      74657200 
+ 563              	.LASF21:
+ 564 014b 4D696C6C 		.ascii	"Millis_Sleep\000"
+ 564      69735F53 
+ 564      6C656570 
+ 564      00
+ 565              	.LASF10:
+ 566 0158 75696E74 		.ascii	"uint32\000"
+ 566      333200
+ 567              	.LASF5:
+ 568 015f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 568      20756E73 
+ 568      69676E65 
+ 568      6420696E 
+ 568      7400
+ 569              	.LASF8:
+ 570 0171 756E7369 		.ascii	"unsigned int\000"
+ 570      676E6564 
+ 570      20696E74 
+ 570      00
+ 571              	.LASF23:
+ 572 017e 4D696C6C 		.ascii	"Millis_ReadCounter\000"
+ 572      69735F52 
+ 572      65616443 
+ 572      6F756E74 
+ 572      657200
+ 573              	.LASF7:
+ 574 0191 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 574      206C6F6E 
+ 574      6720756E 
+ 574      7369676E 
+ 574      65642069 
+ 575              	.LASF29:
+ 576 01a8 4D696C6C 		.ascii	"Millis_backup\000"
+ 576      69735F62 
+ARM GAS  C:\Users\Kiwi\AppData\Local\Temp\cc1YKakf.s 			page 15
+
+
+ 576      61636B75 
+ 576      7000
+ 577              	.LASF15:
+ 578 01b6 73697A65 		.ascii	"sizetype\000"
+ 578      74797065 
+ 578      00
+ 579              	.LASF16:
+ 580 01bf 436F756E 		.ascii	"CounterEnableState\000"
+ 580      74657245 
+ 580      6E61626C 
+ 580      65537461 
+ 580      746500
+ 581              	.LASF6:
+ 582 01d2 6C6F6E67 		.ascii	"long long int\000"
+ 582      206C6F6E 
+ 582      6720696E 
+ 582      7400
+ 583              	.LASF13:
+ 584 01e0 63686172 		.ascii	"char\000"
+ 584      00
+ 585              	.LASF2:
+ 586 01e5 73686F72 		.ascii	"short int\000"
+ 586      7420696E 
+ 586      7400
+ 587              	.LASF27:
+ 588 01ef 47656E65 		.ascii	"Generated_Source\\PSoC5\\Millis_PM.c\000"
+ 588      72617465 
+ 588      645F536F 
+ 588      75726365 
+ 588      5C50536F 
+ 589              	.LASF22:
+ 590 0212 4D696C6C 		.ascii	"Millis_Wakeup\000"
+ 590      69735F57 
+ 590      616B6575 
+ 590      7000
+ 591              	.LASF4:
+ 592 0220 6C6F6E67 		.ascii	"long int\000"
+ 592      20696E74 
+ 592      00
+ 593              	.LASF14:
+ 594 0229 6C6F6E67 		.ascii	"long double\000"
+ 594      20646F75 
+ 594      626C6500 
+ 595              	.LASF18:
+ 596 0235 4D696C6C 		.ascii	"Millis_backupStruct\000"
+ 596      69735F62 
+ 596      61636B75 
+ 596      70537472 
+ 596      75637400 
+ 597              	.LASF0:
+ 598 0249 7369676E 		.ascii	"signed char\000"
+ 598      65642063 
+ 598      68617200 
+ 599              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

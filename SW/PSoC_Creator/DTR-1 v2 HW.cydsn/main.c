@@ -89,10 +89,17 @@ CY_ISR( M1_Int_Handler )
     instCnt++;
 }
 
+#define BS170
 void SAPI_Reset() {
+#ifdef BS170
+    RTL_Write(1);
+    CyDelay(6);
+    RTL_Write(0);
+#else
     RTL_Write(0);
     CyDelay(6);
     RTL_Write(1);
+#endif
     //CyDelay(1);
 }
 
@@ -955,8 +962,8 @@ int main(void)
         display_update();*/
     }
     USBUART_printf("");
-    USBUART_printf("\r\nSAPI-1 DTR-1 board based on CY8CKIT-059           ");
-    USBUART_printf("     (c) 2021 martin@8bity.cz\r\n\r\n");
+    USBUART_printf("\r\nSAPI-1 DTR-1 board based on CY8CKIT-059 rev.231709");
+    USBUART_printf("  (c) 2021-23 martin@8bity.cz\r\n\r\n");
 
     //USBUART_printf("CTS = %d\r\n", CTS_Read());
     if( CTS_Read()==1 ) {
@@ -1099,6 +1106,7 @@ int main(void)
                     }
                     if(strcmp(cmdline, "reset")==0 && !cmdprocessed) {
                         SAPI_Reset();
+                        USBUART_printf("SAPI reset.\r\n", cmdline);
                         cmdprocessed = 1;
                         noPrompt = 0;
                     }

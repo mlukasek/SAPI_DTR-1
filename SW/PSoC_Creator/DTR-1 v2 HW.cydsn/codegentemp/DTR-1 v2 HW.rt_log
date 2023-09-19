@@ -15,12 +15,12 @@ I1206: Completed Reading of file C:\Program Files (x86)\Cypress\PSoC Creator\4.4
 I1209: Started routing
 I1223: Total Nets : 237 
 I1212: Iteration  1 :   171 unrouted : 1 seconds
-I1212: Iteration  2 :    86 unrouted : 1 seconds
-I1212: Iteration  3 :    64 unrouted : 0 seconds
+I1212: Iteration  2 :    86 unrouted : 0 seconds
+I1212: Iteration  3 :    64 unrouted : 1 seconds
 I1212: Iteration  4 :    50 unrouted : 0 seconds
 I1212: Iteration  5 :    34 unrouted : 0 seconds
-I1212: Iteration  6 :    27 unrouted : 1 seconds
-I1212: Iteration  7 :    28 unrouted : 0 seconds
+I1212: Iteration  6 :    27 unrouted : 0 seconds
+I1212: Iteration  7 :    28 unrouted : 1 seconds
 I1212: Iteration  8 :    25 unrouted : 0 seconds
 I1212: Iteration  9 :    27 unrouted : 0 seconds
 I1212: Iteration 10 :    21 unrouted : 0 seconds
